@@ -45,11 +45,11 @@
             <h3 class="titulo" style="padding-left: 10px;">Productos</h3>
         </div>
     </div>
-
+   
     <div class="clearfix"></div>
 
-    <div class="col-md-12 col-sm-12 ">
-        <div class="x_panel">
+    <div class="col-md-12 col-sm-12  " >
+        <div class="x_panel" id="contenido_tabla">
             <div class="x_title">
                 <?php include 'abastecer.php'; ?>
                 <?php include 'vender.php'; ?>
@@ -63,7 +63,7 @@
                 $quer->execute();
                 $results = $quer->fetchAll();
                 foreach ($results as $row) { ?>
-&nbsp;&nbsp;
+
                     <div class="alert alert-info alert-dismissible fade show left" id="success-alert" role="alert">
                         Se debe abastecer el producto con el código <strong> <?php echo $row['PRO_CODIGO']; ?></strong> quedan <?php echo $row['PRO_STOCK_MAX']; ?> unidades 
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -93,7 +93,7 @@
                                         <th scope="col">Precio Venta</th>
                                         <th scope="col" data-priority>Cantidad </th>
                                         <th scope="col">Estado</th>
-                                        <th scope="col" data-priority>Acciones</th>
+                                        <th  scope="col" data-priority>Acciones</th>
 
                                     </tr>
                                 </thead>

@@ -4,8 +4,6 @@ include_once '../../Model/conexion.php';
 include_once '../GlobalFuntion.php';
 
 
-
-
 ?>
     <!DOCTYPE html>
     <html lang="es">

@@ -1,8 +1,13 @@
 $(document).ready(function() {
 
+   
+
+
     setTimeout(function() {
         $(".alert").alert('close');
     }, 5000);
+
+    
 
     let datatableInstance = $('#tablaProductos').DataTable({
         // cargamos los datos consumiendo el Json con ajax 
@@ -110,11 +115,19 @@ let actualizar = function() {
         console.log(rsu)
         if (rsu.success == true) {
             // alert("Registro Modificado")
+            //$(".input").val("");
             $(".input").val("");
             $("#AbastecerModal").modal('hide');            
+           // location.reload();
+           // toastr.success('Producto Abastecido');
+           // window.location.reload(null, false);
+           
+           
+            window.location.reload(null, false);
             toastr.success('Producto Abastecido');
-            //location.reload();
-            $('.dataTable').DataTable().ajax.reload(null, false);
+
+
+            //$('.dataTable').DataTable().ajax.reload(null, false);
             console.log(rsu.success)
 
         } else {

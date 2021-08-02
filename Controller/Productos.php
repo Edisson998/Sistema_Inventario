@@ -24,13 +24,11 @@ foreach ($result as $row) {
     $pcPro = $row['PRO_PRECIOCOMPRA'];
     $pvPro = $row['PRO_PRECIO_VENTA'];
     $ivPro= $row['PRO_IVA'];
-    $smaPro = $row['PRO_STOCK_MAX'];
-    $consulta = "SELECT PRO_STOCK_MAX from tbl_producto WHERE PRO_STOCK_MAX > 9";
-
-    if($consulta){
-        "<span class='badge badge-danger'> <i class='fa fa-check'> $smaPro </span>";
+    $smaPro = $row['PRO_STOCK_MAX'];   
+    if($smaPro <= 5){
+        $smaPro = $row['PRO_STOCK_MAX'] =  "<span class='badge badge-danger'> $smaPro";
     }else {
-        "<span class='badge badge-danger'> <i class='fa fa-check'> $smaPro </span>";
+        $smaPro = $row['PRO_STOCK_MAX'] = "<span class='badge badge-success'>  $smaPro";
     }
     $smiPro = $row['PRO_STOCK_MIN'];
     $estPro = $row['PRO_ESTADO'];
@@ -56,12 +54,7 @@ foreach ($result as $row) {
         'PRO_ESTADO' => $estPro
     );
 }
-
-
 $data["data"] = $producto;
 $resultadoJson = json_encode($data);
 echo $resultadoJson;
 $con = null;
-
-
-    ?>
