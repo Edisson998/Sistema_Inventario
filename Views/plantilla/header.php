@@ -67,7 +67,10 @@ include_once '../GlobalFuntion.php';
 
                     <h3>Inicio</h3>
                     <ul class="nav side-menu">
-                      <li><a href="<?php echo SERVERURLSI ?>Views/Principal/inicio.php"><i class="fa fa-home"></i> Inicio</a></li>
+                      <li><a href="<?php echo SERVERURLSI ?>Views/Estadisticas/estadisticas.php"><i class="fa fa-home"></i> Inicio</a></li>
+                    </ul>
+                    <ul class="nav side-menu">
+                      <li><a href="<?php echo SERVERURLSI ?>Views/Principal/inicio.php"><i class="fa fa-home"></i> Inventario</a></li>
                     </ul>
 
                   </div>
