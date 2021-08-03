@@ -1,6 +1,6 @@
 <?php
 
-include_once '../../Model/conexion.php';
+require_once '../../Model/conexion.php';
 include_once '../GlobalFuntion.php';
 
 
@@ -68,7 +68,7 @@ include_once '../GlobalFuntion.php';
                       <li><a href="<?php echo SERVERURLSI ?>Views/Estadisticas/estadisticas.php"><i class="fa fa-home"></i> Inicio</a></li>
                     </ul>
                     <ul class="nav side-menu">
-                      <li><a href="<?php echo SERVERURLSI ?>Views/Principal/inicio.php"><i class="fa fa-home"></i> Inventario</a></li>
+                      <li><a href="<?php echo SERVERURLSI ?>Views/Principal/inicio.php"><i class="fa fa-cube"></i> Inventario</a></li>
                     </ul>
 
                   </div>

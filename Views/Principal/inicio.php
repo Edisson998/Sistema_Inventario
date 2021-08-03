@@ -54,6 +54,7 @@
                 <?php include 'abastecer.php'; ?>
                 <?php include 'vender.php'; ?>
                 <?php include 'estadistica.php'; ?>
+                <?php include 'editar.php'; ?>
                 <?php
                 //instanciamos la conexion
                 $obj = new Conexion();
@@ -88,11 +89,11 @@
                                         <th scope="col">Código </th>
                                         <th scope="col">Nombre </th>
                                         <th scope="col">Descripción </th>
-                                        <th scope="col">Precio Compra </th>
-                                        <th scope="col">Iva</th>
-                                        <th scope="col">Precio Venta</th>
+                                        <th scope="col" data-priority>Precio Compra </th>
+                                        <th scope="col" data-priority>Iva</th>
+                                        <th scope="col" data-priority>Precio Venta</th>
                                         <th scope="col" data-priority>Cantidad </th>
-                                        <th scope="col">Estado</th>
+                                        <th scope="col" data-priority>Cantidad Mínima</th>
                                         <th  scope="col" data-priority>Acciones</th>
 
                                     </tr>

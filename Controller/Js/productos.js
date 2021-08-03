@@ -46,10 +46,10 @@ $(document).ready(function() {
                 "data": "PRO_STOCK_MAX"
             },
             {
-                "data": "PRO_ESTADO"
+                "data": "PRO_STOCK_MIN"
             },
             {
-                "defaultContent": " <button type='button' data-toggle='modal' data-target='#AbastecerModal' class='abastecer btn btn-info btn-sm ' title='Abastecer'><i class='fa fa-plus' aria-hidden='true'></i>  Abastecer </button>  <button type='button' data-toggle='modal' data-target='#VenderModal'  class='vender btn btn-warning btn-sm' title='Vender'> Vender <i class='fa fa-sign-in' aria-hidden='true'></i>  </button> "
+                "defaultContent": " <button type='button' data-toggle='modal' data-target='#AbastecerModal' class='abastecer btn btn-primary btn-sm ' title='Abastecer'><i class='fa fa-plus' aria-hidden='true'></i>  Abastecer </button>  <button type='button' data-toggle='modal' data-target='#VenderModal'  class='vender btn btn-warning btn-sm' title='Vender'> Vender <i class='fa fa-sign-in' aria-hidden='true'></i>  </button>  "
 
             }
         ],
@@ -78,6 +78,7 @@ $(document).ready(function() {
 
     Obtener_Data("#tablaProductos tbody", datatableInstance);
     Obtener_Data_V("#tablaProductos tbody", datatableInstance);
+   // Obtener_Data_Editar("#tablaProductos tbody", datatableInstance);
 
 });
 
@@ -101,11 +102,32 @@ let Obtener_Data_V= function(tbody, datatableInstance) {
 
         //Capturamos los valores de la base en cada campo de texto del modal editar
 
-        let idProV = $("#idProV").val(data.PRO_ID)
+        let idProV = $("#idProV").val(data.PRO_ID),
+            precio = $("#precio").val(data.PRO_PRECIO_VENTA)
            // cantidad = $("#txtCantidad").val(data.PRO_STOCK_MAX)            
 
     });
 }
+
+/*let Obtener_Data_Editar= function(tbody, datatableInstance) {
+    $(tbody).on('click', 'button.edit', function() {
+        var data = datatableInstance.row($(this).parents("tr")).data();
+         //console.log(data);
+
+        //Capturamos los valores de la base en cada campo de texto del modal editar
+
+        let idp = $("#idp").val(data.PRO_ID),
+            ctpE = $("#ctpE").val(data.CATP_ID).html(data.CATP_NOMBRE),
+            cp = $("#cp").val(data.PRO_CODIGO),
+            np = $("#np").val(data.PRO_NOMBRE),
+            pcp = $("#pcp").val(data.PRO_PRECIOCOMPRA),
+            iva = $("#iva").val(data.PRO_IVA),
+            pvp = $("#pvp").val(data.PRO_PRECIO_VENTA),            
+            ctdp = $("#ctdp").val(data.PRO_STOCK_MAX),
+            ctdpmi = $("#ctdpmi").val(data.PRO_STOCK_MIN),
+            desp = $("#desp").val(data.PRO_DESCRIPCION)  
+         });
+}*/
 
 let actualizar = function() {
     let urlA = "../../Controller/ProdcutoController.php";

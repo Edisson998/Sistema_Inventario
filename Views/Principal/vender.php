@@ -10,7 +10,8 @@
       <div class="modal-body">
         <form class="needs-validation" novalidate enctype="multipart/form-data" id="formVender" method="POST">
           <div class="form-row">
-
+          <input type="hidden" class="form-control" id="precio" name="precio">
+           
             <input type="hidden" class="form-control" id="idProV" name="idProV">
             
             <div class="form-group col-md-12">

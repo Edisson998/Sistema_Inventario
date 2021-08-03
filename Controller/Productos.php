@@ -24,17 +24,18 @@ foreach ($result as $row) {
     $pcPro = $row['PRO_PRECIOCOMPRA'];
     $pvPro = $row['PRO_PRECIO_VENTA'];
     $ivPro= $row['PRO_IVA'];
-    $smaPro = $row['PRO_STOCK_MAX'];   
+    $smaPro = $row['PRO_STOCK_MAX']; 
+    $cant = $row['PRO_STOCK_MAX'];   
     if($smaPro <= 5){
-        $smaPro = $row['PRO_STOCK_MAX'] =  "<span class='badge badge-danger'> $smaPro";
+        $smaPro = $row['PRO_STOCK_MAX'] =   "<span class='badge badge-danger'> $smaPro </span>";
     }else {
-        $smaPro = $row['PRO_STOCK_MAX'] = "<span class='badge badge-success'>  $smaPro";
+        $smaPro = $row['PRO_STOCK_MAX'] =  "<span class='badge badge-success'>  $smaPro  </span>" ;
     }
     $smiPro = $row['PRO_STOCK_MIN'];
     $estPro = $row['PRO_ESTADO'];
     if ($estPro = $row['PRO_ESTADO'] == 'A') {
 
-        $estPro = $row['PRO_ESTADO'] = "<span class='badge badge-success'> <i class='fa fa-check'> Activo ";
+        $estPro = $row['PRO_ESTADO'] = "<span class='badge badge-success'> <i class='fa fa-check'> Activo</span> ";
     }else{
         $estPro = $row['PRO_ESTADO'] = "<span class='badge badge-danger'> <i class='fa fa-check'> Inactivo </span>";
     }  
@@ -50,6 +51,7 @@ foreach ($result as $row) {
         'PRO_PRECIO_VENTA' => $pvPro,
         'PRO_IVA' => $ivPro,
         'PRO_STOCK_MAX' => $smaPro,
+        
         'PRO_STOCK_MIN' => $smiPro,
         'PRO_ESTADO' => $estPro
     );
